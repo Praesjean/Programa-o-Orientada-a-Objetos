@@ -1,0 +1,63 @@
+public class Universidade {
+    public static void main(String[] args) {
+        Professor professor = new Professor("Abimael", "123");
+        Aluno aluno = new Aluno("Jean", "321");
+        Disciplina disciplina = new Disciplina("Programação Orientada a Objetos", professor, aluno);
+
+        disciplina.mostrarInformacoes();
+    }
+}
+
+class Professor {
+    private String nome;
+    private String id;
+
+    public Professor(String nome, String id) {
+        this.nome = nome;
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getId() {
+        return id;
+    }
+}
+
+class Aluno {
+    private String nome;
+    private String matricula;
+
+    public Aluno(String nome, String matricula) {
+        this.nome = nome;
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+}
+
+class Disciplina {
+    private String nome;
+    private Professor professor;
+    private Aluno aluno;
+
+    public Disciplina(String nome, Professor professor, Aluno aluno) {
+        this.nome = nome;
+        this.professor = professor;
+        this.aluno = aluno;
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Disciplina: " + nome);
+        System.out.println("Professor: " + professor.getNome() + " (ID: " + professor.getId() + ")");
+        System.out.println("Aluno: " + aluno.getNome() + " (Matrícula: " + aluno.getMatricula() + ")");
+    }
+}
